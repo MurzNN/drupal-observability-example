@@ -1,0 +1,7 @@
+web.example:
+  path: '/web/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\web\Controller\WebController::build'
+  requirements:
+    _permission: 'access content'

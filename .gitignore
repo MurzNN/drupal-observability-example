@@ -1,0 +1,9 @@
+/vendor
+/frontend/node_modules
+/temp
+/web/*
+!/web/modules
+/web/modules/*
+!/web/modules/web
+/.vscode
+!/.ddev/nginx/cors.conf
