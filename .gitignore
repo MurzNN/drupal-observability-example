@@ -7,3 +7,4 @@
 !/web/modules/web
 /.vscode
 !/.ddev/nginx/cors.conf
+/.ddev/config.yaml
