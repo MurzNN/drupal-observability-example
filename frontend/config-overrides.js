@@ -7,6 +7,7 @@ module.exports = {
       }
     }
     config.plugins[definePluginDelta].definitions['process.env']['DDEV_PRIMARY_URL'] = JSON.stringify(process.env.DDEV_PRIMARY_URL);
+    config.plugins[definePluginDelta].definitions['process.env']['DDEV_HOSTNAME'] = JSON.stringify(process.env.DDEV_HOSTNAME);
     return config;
   },
 }

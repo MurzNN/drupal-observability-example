@@ -25,7 +25,7 @@ const consoleExporter = new ConsoleSpanExporter();
 
 const collectorExporter = new OTLPTraceExporter({
   headers: {},
-  url: 'http://localhost:4318/v1/traces',
+  url: `http://${process.env.DDEV_HOSTNAME}:4318/v1/traces`,
 });
 
 const provider = new WebTracerProvider({

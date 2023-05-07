@@ -18,6 +18,7 @@
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.3",
+        "drupal/coder": "^8.3",
         "drupal/core-composer-scaffold": "10.1.x-dev@dev",
         "drupal/core-project-message": "10.1.x-dev@dev",
         "drupal/core-recommended": "10.1.x-dev@dev",
@@ -25,6 +26,7 @@
         "drupal/devel": "^5.1",
         "drupal/hal": "^2.0",
         "drupal/opentelemetry": "^1.0@alpha",
+        "drupal/prometheus_exporter": "^2.0@beta",
         "drupal/restui": "^1.21",
         "drupal/webprofiler": "^10.0",
         "drush/drush": "^11.5",
@@ -106,6 +108,8 @@
         }
     },
     "require-dev": {
+        "drupal/core-dev": "^10.0",
+        "drupal/test_helpers": "^1.0@RC",
         "phpspec/prophecy-phpunit": "^2",
         "symfony/phpunit-bridge": "^6.2"
     }

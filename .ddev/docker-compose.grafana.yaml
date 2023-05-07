@@ -4,21 +4,19 @@ services:
   grafana:
     container_name: "ddev-${DDEV_SITENAME}-grafana"
     image: grafana/grafana:latest
+    user: "${UID}:${GID}"
     entrypoint:
       - /usr/share/grafana/bin/grafana-server
       - --homepath=/usr/share/grafana
       - --config=/etc/grafana-config/grafana.ini
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
-      com.ddev.approot: $DDEV_APPROOT
+      com.ddev.approot: ${DDEV_APPROOT}
     volumes:
       - ./grafana/grafana/config:/etc/grafana-config
       - ./grafana/grafana/datasources:/etc/grafana/provisioning/datasources
       - ./grafana/grafana/dashboards-provisioning:/etc/grafana/provisioning/dashboards
       - ./grafana/grafana/dashboards:/var/lib/grafana/dashboards
-    expose:
-      - 3001 # Grafana web interface via HTTP.
-      - 3000 # Grafana web interface via HTTPS.
     environment:
       - VIRTUAL_HOST=$DDEV_HOSTNAME
       - HTTP_EXPOSE=3001:3000 # Grafana web interface via HTTP.
@@ -27,6 +25,7 @@ services:
   prometheus:
     container_name: "ddev-${DDEV_SITENAME}-prometheus"
     image: prom/prometheus:latest
+    user: "${UID}:${GID}"
     command:
       - '--config.file=/etc/prometheus/prometheus.yaml'
       - '--storage.tsdb.path=/prometheus'
@@ -38,30 +37,27 @@ services:
       - prometheus-data:/prometheus
     depends_on:
       - web
-    # Using this trick to get port available at the localhost host in the
-    # web container. You can disable it to have a separate network.
-    network_mode: container:ddev-${DDEV_SITENAME}-web
-    # expose:
-    #   - 9090
-
+    # exposed ports or network mode will be configured via separate files:
+    # - docker-compose.grafana.localhost.yaml
+    # - docker-compose.grafana.namedhosts.yaml
 
   loki:
     image: grafana/loki:latest
+    user: "${UID}:${GID}"
     container_name: "ddev-${DDEV_SITENAME}-loki"
     volumes:
       - ./grafana/loki/loki.yaml:/etc/loki/local-config.yaml
       - loki-data:/loki
     depends_on:
       - web
-    # Using this trick to get port available at the localhost host in the
-    # web container. You can disable it to have a separate network.
-    network_mode: container:ddev-${DDEV_SITENAME}-web
-    # expose:
-    #   - 3100
+    # exposed ports or network mode will be configured via separate files:
+    # - docker-compose.grafana.localhost.yaml
+    # - docker-compose.grafana.namedhosts.yaml
 
   tempo:
     container_name: "ddev-${DDEV_SITENAME}-tempo"
     image: grafana/tempo:latest
+    user: "${UID}:${GID}"
     volumes:
       - ./grafana/tempo/tempo.yaml:/etc/tempo.yaml
       - tempo-data:/data
@@ -69,18 +65,19 @@ services:
       - "-config.file=/etc/tempo.yaml"
     depends_on:
       - web
-    # Using this trick to get port available at the localhost host in the
-    # web container. You can disable it to have a separate network.
-    network_mode: container:ddev-${DDEV_SITENAME}-web
-    # expose:
-    #   - 3200 # The Tempo main API port.
-    #   - 4318 # Tempo OTLP/HTTP port
-    #   - 4317 # Tempo OTLP/gRPC port
-    #   - 9411 # Tempo Zipkin/HTTP port
-    #   - 14250 # Tempo Jaeger/gRPC port
-    #   - 14268 # Tempo Jaeger/HTTP port
-    #   - 6831 # Tempo Jaeger/Compact (UDP) port
-    #   - 55678 # Tempo OpenCensus port
+    # exposed ports or network mode will be configured via separate files:
+    # - docker-compose.grafana.localhost.yaml
+    # - docker-compose.grafana.namedhosts.yaml
+
+  agent:
+    container_name: "ddev-${DDEV_SITENAME}-agent"
+    image: grafana/agent:latest
+    user: "${UID}:${GID}"
+    volumes:
+      - ./grafana/agent/agent.yaml:/etc/agent/agent.yaml
+      - ./syslog/syslog:/var/log/syslog
+    depends_on:
+      - web
 
 volumes:
   tempo-data:

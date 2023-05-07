@@ -1,0 +1,4 @@
+services:
+  web:
+    volumes:
+      - "./syslog/syslog:/var/log/syslog"
