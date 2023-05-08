@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "adce5833ba55c2ba3f185ea0bcb0d1ea",
+    "content-hash": "573385d81074c02a4f4ebb8fb020347e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2179,32 +2179,30 @@
         },
         {
             "name": "drupal/opentelemetry",
-            "version": "1.0.0-alpha2",
+            "version": "dev-1.0.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/opentelemetry.git",
-                "reference": "1.0.0-alpha2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/opentelemetry-1.0.0-alpha2.zip",
-                "reference": "1.0.0-alpha2",
-                "shasum": "b5ae2b7c93a43562c2e547756d761321dfdfb8eb"
+                "reference": "e68f157ae25806c6a2a2c3cda842f1895abbd95e"
             },
             "require": {
                 "drupal/core": "^9 || ^10",
+                "google/protobuf": "^3.22",
                 "open-telemetry/exporter-otlp": "^1.0.0beta3",
                 "open-telemetry/sdk": "^1.0.0beta5",
                 "php": ">=8.0"
             },
             "require-dev": {
-                "drupal/test_helpers": "^1.0.0-beta10"
+                "drupal/test_helpers": "^1.0.0-rc1"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
                 "drupal": {
-                    "version": "1.0.0-alpha2",
-                    "datestamp": "1680517374",
+                    "version": "1.0.0-alpha2+6-dev",
+                    "datestamp": "1683547524",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -12280,7 +12278,7 @@
         "drupal/core-composer-scaffold": 20,
         "drupal/core-project-message": 20,
         "drupal/core-recommended": 20,
-        "drupal/opentelemetry": 15,
+        "drupal/opentelemetry": 20,
         "drupal/prometheus_exporter": 10,
         "drupal/test_helpers": 5
     },
