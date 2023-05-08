@@ -1,4 +1,4 @@
 web_extra_daemons:
   - name: "node-app"
-    command: "/usr/bin/npm run start"
+    command: "/usr/bin/npm run install-start"
     directory: /var/www/html/frontend

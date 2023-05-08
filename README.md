@@ -20,16 +20,10 @@ git clone https://github.com/MurzNN/drupal-observability-example.git
 cd drupal-observability-example
 ddev config --docroot=web --project-type=drupal10 --create-docroot
 ddev start
-ddev ssh
-composer install
-drush site-install
-drush pm:install observability_example -y
-drush devel-generate:content
-cd frontend
-npm install
-#supervisorctl restart webextradaemons:node-app
-exit
-ddev restart
+ddev exec "composer install"
+ddev exec "drush site-install -y"
+ddev exec "drush pm:install observability_example -y"
+ddev exec "drush devel-generate:content"
 drush uli
 ```
 
