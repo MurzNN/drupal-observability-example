@@ -6,6 +6,10 @@ web_extra_daemons:
     command: "/usr/bin/sudo /usr/sbin/syslog-ng -F --no-caps"
     directory: /var/www/html
 
+hooks:
+  pre-start:
+    - exec-host: "([ -d ./.ddev/syslog-data ] || mkdir -p ./.ddev/syslog-data) && ([ -f ./.ddev/syslog-data/syslog ] || touch ./.ddev/syslog-data/syslog)"
+
 web_extra_exposed_ports:
   # A port for the frontend app, can be commented out if not needed.
   - name: frontend-app

@@ -35,3 +35,4 @@
 
 !/config.grafana.yaml
 !/config.observability-demo.yaml
+/syslog-data

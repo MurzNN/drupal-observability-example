@@ -13,10 +13,18 @@ services:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: ${DDEV_APPROOT}
     volumes:
-      - ./grafana/grafana/config:/etc/grafana-config
-      - ./grafana/grafana/datasources:/etc/grafana/provisioning/datasources
-      - ./grafana/grafana/dashboards-provisioning:/etc/grafana/provisioning/dashboards
-      - ./grafana/grafana/dashboards:/var/lib/grafana/dashboards
+      - type: bind
+        source: ./grafana/grafana/config
+        target: /etc/grafana-config
+      - type: bind
+        source: ./grafana/grafana/datasources
+        target: /etc/grafana/provisioning/datasources
+      - type: bind
+        source: ./grafana/grafana/dashboards-provisioning
+        target: /etc/grafana/provisioning/dashboards
+      - type: bind
+        source: ./grafana/grafana/dashboards
+        target: /var/lib/grafana/dashboards
     environment:
       - VIRTUAL_HOST=$DDEV_HOSTNAME
       - HTTP_EXPOSE=3001:3000 # Grafana web interface via HTTP.
@@ -33,7 +41,9 @@ services:
       - '--web.console.templates=/etc/prometheus/consoles'
       - '--web.enable-lifecycle'
     volumes:
-      - ./grafana/prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml
+      - type: bind
+        source: ./grafana/prometheus/prometheus.yaml
+        target: /etc/prometheus/prometheus.yaml
       - prometheus-data:/prometheus
     depends_on:
       - web
@@ -46,7 +56,9 @@ services:
     user: "${UID}:${GID}"
     container_name: "ddev-${DDEV_SITENAME}-loki"
     volumes:
-      - ./grafana/loki/loki.yaml:/etc/loki/local-config.yaml
+      - type: bind
+        source: ./grafana/loki/loki.yaml
+        target: /etc/loki/local-config.yaml
       - loki-data:/loki
     depends_on:
       - web
@@ -59,7 +71,9 @@ services:
     image: grafana/tempo:latest
     user: "${UID}:${GID}"
     volumes:
-      - ./grafana/tempo/tempo.yaml:/etc/tempo.yaml
+      - type: bind
+        source: ./grafana/tempo/tempo.yaml
+        target: /etc/tempo.yaml
       - tempo-data:/data
     command:
       - "-config.file=/etc/tempo.yaml"
@@ -74,10 +88,24 @@ services:
     image: grafana/agent:latest
     user: "${UID}:${GID}"
     volumes:
-      - ./grafana/agent/agent.yaml:/etc/agent/agent.yaml
-      - ./syslog/syslog:/var/log/syslog
+      - type: bind
+        source: ./grafana/agent/agent.yaml
+        target: /etc/agent/agent.yaml
+
+      - type: bind
+        source: ./syslog-data/syslog
+        target: /var/log/syslog
     depends_on:
       - web
+
+  web:
+    volumes:
+      - type: bind
+        source: ./syslog/syslog.grafana.conf
+        target: /etc/syslog-ng/conf.d/syslog.grafana.conf
+      - type: bind
+        source: ./syslog-data/syslog
+        target: /var/log/syslog
 
 volumes:
   tempo-data:

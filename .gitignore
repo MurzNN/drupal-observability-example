@@ -10,4 +10,4 @@
 /.ddev/config.yaml
 !/.ddev/config.grafana.yaml
 !/.ddev/config.observability-demo.yaml
-/.ddev/syslog
+/.ddev/syslog-data

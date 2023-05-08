@@ -16,7 +16,7 @@ distributor:
         http: # port 4318
           cors:
             allowed_origins:
-              - '*'
+              - "*"
         grpc: # port 4317
     opencensus:
 
