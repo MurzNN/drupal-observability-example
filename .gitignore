@@ -4,7 +4,7 @@
 /web/*
 !/web/modules
 /web/modules/*
-!/web/modules/web
+!/web/modules/custom
 /.vscode
 !/.ddev/nginx/cors.conf
 /.ddev/config.yaml

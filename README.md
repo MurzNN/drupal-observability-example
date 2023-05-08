@@ -18,9 +18,9 @@ ddev start
 ddev ssh
 composer install
 drush site-install
-drush pm:install devel_generate opentelemetry web restui
+drush pm:install observability_example
 drush devel-generate:content
 cd frontend
 npm install
-npm run-script start
+supervisorctl restart webextradaemons:node-app
 ```

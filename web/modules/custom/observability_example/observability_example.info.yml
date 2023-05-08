@@ -1,0 +1,12 @@
+name: Observability Example
+type: module
+description: "Example of integration tools for observability with Drupal: OpenTelemetry, Prometheus Metrics, Logs with trace id."
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - "drupal:rest"
+  - "prometheus_exporter:prometheus_exporter"
+  - "opentelemetry:opentelemetry"
+  - "opentelemetry:opentelemetry_syslog"
+  - "prometheus_exporter:prometheus_exporter"
+  - "devel:devel_generate"

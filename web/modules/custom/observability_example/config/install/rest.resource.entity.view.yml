@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - hal
+    - serialization
+    - user
+    - views
+    - observability_example
+    - rest
+  enforced:
+    module:
+      - observability_example
+id: entity.view
+plugin_id: "entity:view"
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - hal_json
+    - json
+    - xml
+  authentication:
+    - cookie

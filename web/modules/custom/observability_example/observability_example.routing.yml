@@ -1,0 +1,7 @@
+web.example:
+  path: "/observability-example"
+  defaults:
+    _title: "Observability example page"
+    _controller: '\Drupal\observability_example\Controller\ObservabilityExampleController::build'
+  requirements:
+    _permission: "access content"
