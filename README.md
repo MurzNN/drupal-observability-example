@@ -27,7 +27,9 @@ drush pm:install observability_example -y
 drush devel-generate:content
 cd frontend
 npm install
-supervisorctl restart webextradaemons:node-app
+#supervisorctl restart webextradaemons:node-app
+exit
+ddev restart
 drush uli
 ```
 
@@ -36,5 +38,10 @@ https://drupal-observability-example.ddev.site:8443/
 and see the loaded articles.
 
 Then - open Grafana at the url
-https://drupal-observability-example.ddev.site:8443/
-and go to Explore, Query type "Search", press "Run query" and see the traces.
+https://drupal-observability-example.ddev.site:3000/
+and go to Explore, select "Tempo" datasource, choose Query type "Search", press "Run query" and see the traces.
+
+To see how custom spans in Drupal code work - open the url
+https://drupal-observability-example.ddev.site/observability-example
+several times (it produces exceptions in 30% of calls - it's intendend)
+and then - refresh the list of traces.
