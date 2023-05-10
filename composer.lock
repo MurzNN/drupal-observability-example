@@ -3688,16 +3688,16 @@
         },
         {
             "name": "open-telemetry/exporter-otlp",
-            "version": "1.0.0beta5",
+            "version": "1.0.0beta8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opentelemetry-php/exporter-otlp.git",
-                "reference": "cdf89d3fbfc8f9b7ea4d5d843c8adacf674daea4"
+                "reference": "946f2f47feab0012a98809ddf3f817792579912e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opentelemetry-php/exporter-otlp/zipball/cdf89d3fbfc8f9b7ea4d5d843c8adacf674daea4",
-                "reference": "cdf89d3fbfc8f9b7ea4d5d843c8adacf674daea4",
+                "url": "https://api.github.com/repos/opentelemetry-php/exporter-otlp/zipball/946f2f47feab0012a98809ddf3f817792579912e",
+                "reference": "946f2f47feab0012a98809ddf3f817792579912e",
                 "shasum": ""
             },
             "require": {
@@ -3713,6 +3713,11 @@
                 "psr/http-factory-implementation": "For otlp/http exporting"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "files": [
                     "_register.php"
@@ -3744,9 +3749,9 @@
             ],
             "support": {
                 "issues": "https://github.com/opentelemetry-php/exporter-otlp/issues",
-                "source": "https://github.com/opentelemetry-php/exporter-otlp/tree/1.0.0beta5"
+                "source": "https://github.com/opentelemetry-php/exporter-otlp/tree/1.0.0beta8"
             },
-            "time": "2023-03-30T09:16:18+00:00"
+            "time": "2023-05-04T23:32:14+00:00"
         },
         {
             "name": "open-telemetry/gen-otlp-protobuf",
@@ -3806,16 +3811,16 @@
         },
         {
             "name": "open-telemetry/sdk",
-            "version": "1.0.0beta6",
+            "version": "1.0.0beta10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/opentelemetry-php/sdk.git",
-                "reference": "fbaaebc511c8b272b0fe8d2d7ce88d1cc4926597"
+                "reference": "1206934af69db1525cda55e776f0b029bde2a91b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opentelemetry-php/sdk/zipball/fbaaebc511c8b272b0fe8d2d7ce88d1cc4926597",
-                "reference": "fbaaebc511c8b272b0fe8d2d7ce88d1cc4926597",
+                "url": "https://api.github.com/repos/opentelemetry-php/sdk/zipball/1206934af69db1525cda55e776f0b029bde2a91b",
+                "reference": "1206934af69db1525cda55e776f0b029bde2a91b",
                 "shasum": ""
             },
             "require": {
@@ -3827,6 +3832,7 @@
                 "php-http/async-client-implementation": "^1.0",
                 "php-http/discovery": "^1.14",
                 "psr/http-factory-implementation": "^1.0",
+                "psr/http-message": "^1.0.1",
                 "psr/log": "^1.1|^2.0|^3.0",
                 "symfony/polyfill-mbstring": "^1.23",
                 "symfony/polyfill-php80": "^1.26",
@@ -3838,6 +3844,11 @@
                 "ext-mbstring": "To increase performance of string operations"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "files": [
                     "Common/Util/functions.php",
@@ -3872,9 +3883,9 @@
                 "tracing"
             ],
             "support": {
-                "source": "https://github.com/opentelemetry-php/sdk/tree/1.0.0beta6"
+                "source": "https://github.com/opentelemetry-php/sdk/tree/1.0.0beta10"
             },
-            "time": "2023-03-26T22:16:47+00:00"
+            "time": "2023-05-09T23:16:45+00:00"
         },
         {
             "name": "open-telemetry/sem-conv",

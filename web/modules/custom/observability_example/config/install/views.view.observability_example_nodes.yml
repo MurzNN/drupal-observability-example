@@ -11,10 +11,10 @@ dependencies:
     module:
       - observability_example
 id: observability_example_nodes
-label: Nodes
+label: 'REST Nodes'
 module: views
-description: ""
-tag: ""
+description: ''
+tag: ''
 base_table: node_field_data
 base_field: nid
 display:
@@ -24,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Nodes
+      title: 'REST Nodes'
       fields:
         title:
           id: title
@@ -32,7 +32,7 @@ display:
           field: title
           relationship: none
           group_type: group
-          admin_label: ""
+          admin_label: ''
           entity_type: node
           entity_field: title
           plugin_id: field
@@ -47,15 +47,15 @@ display:
             strip_tags: false
             trim: false
             html: false
-          element_type: ""
-          element_class: ""
-          element_label_type: ""
-          element_label_class: ""
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
           element_label_colon: true
-          element_wrapper_type: ""
-          element_wrapper_class: ""
+          element_wrapper_type: ''
+          element_wrapper_class: ''
           element_default_classes: true
-          empty: ""
+          empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -64,14 +64,14 @@ display:
           settings:
             link_to_entity: true
           group_column: value
-          group_columns: {}
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ", "
+          separator: ', '
           field_api_classes: false
       pager:
         type: full
@@ -83,14 +83,14 @@ display:
           tags:
             next: ››
             previous: ‹‹
-            first: "« First"
-            last: "Last »"
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
-            items_per_page_label: "Items per page"
-            items_per_page_options: "5, 10, 25, 50"
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: "- All -"
+            items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
           quantity: 9
@@ -100,18 +100,18 @@ display:
           submit_button: Apply
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: "Sort by"
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
         type: perm
         options:
-          perm: "access content"
+          perm: 'access content'
       cache:
         type: tag
-        options: {}
-      empty: {}
+        options: {  }
+      empty: {  }
       sorts:
         created:
           id: created
@@ -119,17 +119,17 @@ display:
           field: created
           relationship: none
           group_type: group
-          admin_label: ""
+          admin_label: ''
           entity_type: node
           entity_field: created
           plugin_id: date
           order: DESC
           expose:
-            label: ""
-            field_identifier: ""
+            label: ''
+            field_identifier: ''
           exposed: false
           granularity: second
-      arguments: {}
+      arguments: {  }
       filters:
         status:
           id: status
@@ -138,10 +138,10 @@ display:
           entity_type: node
           entity_field: status
           plugin_id: boolean
-          value: "1"
+          value: '1'
           group: 1
           expose:
-            operator: ""
+            operator: ''
       style:
         type: table
       row:
@@ -149,44 +149,44 @@ display:
       query:
         type: views_query
         options:
-          query_comment: ""
+          query_comment: ''
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: {}
-      relationships: {}
-      header: {}
-      footer: {}
-      display_extenders: {}
+          query_tags: {  }
+      relationships: {  }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
-        - "languages:language_content"
-        - "languages:language_interface"
+        - 'languages:language_content'
+        - 'languages:language_interface'
         - url.query_args
-        - "user.node_grants:view"
+        - 'user.node_grants:view'
         - user.permissions
-      tags: {}
+      tags: {  }
   page_1:
     id: page_1
     display_title: Page
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: {}
+      display_extenders: {  }
       path: nodes
     cache_metadata:
       max-age: -1
       contexts:
-        - "languages:language_content"
-        - "languages:language_interface"
+        - 'languages:language_content'
+        - 'languages:language_interface'
         - url.query_args
-        - "user.node_grants:view"
+        - 'user.node_grants:view'
         - user.permissions
-      tags: {}
+      tags: {  }
   rest_export_1:
     id: rest_export_1
-    display_title: "REST export"
+    display_title: 'REST export'
     display_plugin: rest_export
     position: 2
     display_options:
@@ -198,16 +198,16 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: "Next ›"
-            previous: "‹ Previous"
-            first: "« First"
-            last: "Last »"
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
-            items_per_page_label: "Items per page"
-            items_per_page_options: "5, 10, 25, 50"
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: "- All -"
+            items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
           quantity: 9
@@ -215,19 +215,19 @@ display:
         type: serializer
       row:
         type: data_entity
-        options: {}
+        options: {  }
       defaults:
         style: false
         row: false
-      display_extenders: {}
+      display_extenders: {  }
       path: api/nodes
     cache_metadata:
       max-age: -1
       contexts:
-        - "languages:language_content"
-        - "languages:language_interface"
+        - 'languages:language_content'
+        - 'languages:language_interface'
         - request_format
         - url.query_args
-        - "user.node_grants:view"
+        - 'user.node_grants:view'
         - user.permissions
-      tags: {}
+      tags: {  }
