@@ -34,5 +34,6 @@
 /**/README.*
 
 !/config.grafana.yaml
+!/config.grafana.logs.yaml
 !/config.observability-demo.yaml
 /syslog-data

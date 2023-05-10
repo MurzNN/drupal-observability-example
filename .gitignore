@@ -9,5 +9,6 @@
 !/.ddev/nginx/cors.conf
 /.ddev/config.yaml
 !/.ddev/config.grafana.yaml
+!/.ddev/config.grafana.logs.yaml
 !/.ddev/config.observability-demo.yaml
 /.ddev/syslog-data
