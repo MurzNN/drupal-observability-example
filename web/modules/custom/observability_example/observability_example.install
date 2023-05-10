@@ -11,6 +11,10 @@ use Drupal\user\RoleInterface;
  * Implements hook_install().
  */
 function observability_example_install($phase) {
+  // Setting a suitable format for Loki
+  \Drupal::configFactory()->getEditable('syslog.settings')
+    ->set('format', 'base_url="!base_url" timestamp="!timestamp" type="!type" ip="!ip" request_uri="!request_uri" referer="!referer" uid="!uid" link="!link" message="!message" trace_id="!trace_id"')
+    ->save(TRUE);
   // Opening metrics to any user.
   user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['access prometheus metrics']);
   user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['access prometheus metrics']);
