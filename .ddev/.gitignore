@@ -35,5 +35,6 @@
 
 !/config.grafana.yaml
 !/config.grafana.logs.yaml
+!/config.grafana.traces.yaml
 !/config.observability-demo.yaml
 /syslog-data
