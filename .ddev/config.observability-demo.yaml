@@ -2,3 +2,10 @@ web_extra_daemons:
   - name: "node-app"
     command: "/usr/bin/npm run install-start"
     directory: /var/www/html/frontend
+
+web_extra_exposed_ports:
+  # A frontend app
+  - name: frontend-app
+    container_port: 8080
+    http_port: 8080
+    https_port: 8443
