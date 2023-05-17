@@ -4,7 +4,7 @@ This example demonstrates integration of observability tools (traces linked to
 logs, metrics) with Drupal, to get a full tracing information from a frontend
 application to the Drupal at the backend.
 
-It is based on (DDEV)[https://ddev.readthedocs.io/] project to quickly get a full
+It is based on [DDEV](https://ddev.readthedocs.io/) project to quickly get a full
 local working instance with all required services:
 - NPM for the frontend app (React).
 - PHP and Nginx for the backend app (Drupal).
