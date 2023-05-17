@@ -16,7 +16,7 @@ datasources:
       derivedFields:
         - datasourceUid: Tempo
           matcherRegex: "trace_id=\"(\\w+)\""
-          name: TraceID
+          name: trace_id
           url: "$${__value.raw}"
 
   - name: Prometheus
