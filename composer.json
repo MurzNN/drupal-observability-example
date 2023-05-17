@@ -25,7 +25,7 @@
         "drupal/dev_mode": "^2.6",
         "drupal/devel": "^5.1",
         "drupal/hal": "^2.0",
-        "drupal/opentelemetry": "1.0.x-dev@dev",
+        "drupal/opentelemetry": "^1.0.0-alpha4",
         "drupal/prometheus_exporter": "^2.0@beta",
         "drupal/restui": "^1.21",
         "drupal/webprofiler": "^10.0",
